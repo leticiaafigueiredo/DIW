@@ -1,0 +1,54 @@
+[
+    {
+        "id": "1",
+        "name": "SANSEVIERIA",
+        "description": "um gênero de plantas herbáceas pertencente à família Asparagaceae, nativo da África.",
+        "price": 60.00,
+        "category": "Verdinhas",
+        "mainImageUrl": "https://images.unsplash.com/photo-1620127807580-990c3ecebd14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1600958568384-51f4289e943a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNhbnNldmllcmlhfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+            "https://images.unsplash.com/photo-1637829843396-67bb6afb7106?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2Fuc2V2aWVyaWF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
+            "https://images.unsplash.com/photo-1598880940371-c756e015fea1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "ZAMIOCULTAS",
+        "description": "é uma planta botânica originária da Tanzânia, na África, pertencente à família Araceae.",
+        "price": 40.00,
+        "category": "Verdinhas",
+        "mainImageUrl": "https://images.unsplash.com/photo-1605622171083-f609c7ec22cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8WmFtaW9jdWxjYXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60",
+        "images": [
+            "https://picsum.photos/id/5/200/300",
+            "https://picsum.photos/id/6/200/300",
+            "https://picsum.photos/id/7/200/300"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "SUCULENTAS",
+        "description": "É um grupo fascinante de plantas popular por beleza e facilidade de cuidado.",
+        "price": 10.00,
+        "category": "Verdinhas",
+        "mainImageUrl": "https://images.pexels.com/photos/1022922/pexels-photo-1022922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "images": [
+            "https://picsum.photos/id/9/200/300",
+            "https://picsum.photos/id/10/200/300",
+            "https://picsum.photos/id/11/200/300"
+        ]
+    },
+    {
+        "id": "4",
+        "name": "MONSTERA",
+        "description": "é uma planta perene da família das Aráceas, originária do México, de porte médio.",
+        "price": 100.00,
+        "category": "Verdinhas",
+        "mainImageUrl": "https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=600&q=60",
+        "images": [
+            "https://picsum.photos/id/1/200/300",
+            "https://picsum.photos/id/2/200/300",
+            "https://picsum.photos/id/3/200/300"
+        ]
+    }
+]

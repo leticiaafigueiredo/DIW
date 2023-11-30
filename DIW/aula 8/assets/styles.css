@@ -1,0 +1,24 @@
+
+.logo-name {
+    color: #3c851d;
+}
+
+
+.nav-link{
+    font-size: 20px;
+    margin-top: 0.8rem;
+}
+
+.navbar-brand{
+    margin: 0;
+}
+
+.carousel-text{
+    font-size: 25px;
+    color: white;
+}
+
+.h5, h5{
+    font-size: 28px;
+}
+

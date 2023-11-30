@@ -1,0 +1,20 @@
+
+.navbar {
+    height: 80px;
+}
+.counter{
+    position: absolute;
+    background-color: rgb(244, 244, 84);
+    color: black;
+    text-align: center;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    top: 20px;
+    right: -16px;
+}
+
+.added {
+    opacity: 0.3 ;
+}

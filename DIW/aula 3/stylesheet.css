@@ -1,0 +1,11 @@
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: blue;
+}
+main{
+    
+    background-color: snow;
+    p {
+        font-size: larger;
+    }
+}

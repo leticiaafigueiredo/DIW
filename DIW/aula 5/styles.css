@@ -1,0 +1,147 @@
+
+body{ 
+    margin:0;
+    background-color: white;
+
+}
+/*CARDS*/
+
+
+h2{
+    text-align: center;
+
+}
+
+h2>span{
+    text-align: center;
+    color: red;
+
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: #F0FFDA;
+    text-align: center;
+    padding: 15px;
+    height: 430px;
+    width: 222px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.card-content{
+    width: 222px;
+    height: 77px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-title{
+    font-family: 'Playfair Display', serif;
+}
+
+.card-description{
+    font-family: 'Lato', sans-serif;
+    width: 222px;
+    height: 38px;
+}
+
+.card>img{
+    width: 100%;
+    height:300px ;
+    object-fit: cover;
+}
+
+
+
+
+
+.button-wrapper{
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    padding: 0.25em 0.5em;
+    border-radius: 20px ;
+}
+
+.badge{
+    display: flex;
+    position: absolute;
+    padding: 20px 10px 20px 13px;
+    height: 20px;
+    width: 65px;
+    top: -10px;
+    right: -5px;
+    background-color: rgb(238, 106, 106);
+    border-radius: 100%;
+
+}
+
+
+/*MEDIA QUERIES*/
+
+
+
+.xsmall, .small, .medium, .large, .xlarge{
+    display: none;
+}
+
+@media screen  and (max-width:575px) {
+    .xsmall {
+        display: block;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media screen  and (min-width:576px) and (max-width: 767px) {
+    .small {
+        display: block;
+    }
+    .card {
+        width: 40%;
+    }
+}
+
+@media screen  and (min-width:768px) and (max-width: 991px) {
+    .medium {
+        display: block;
+    }
+    .card{
+        width: 25%;
+    }
+}
+
+@media screen  and (min-width:992px) and (max-width: 1199px){
+    .large {
+        display: block;
+    }
+}
+
+@media screen  and (min-width:1200px) {
+    .xlarge{
+        display: block;
+    }
+    
+    .cards-section {
+        max-width: 1100px;
+        margin-bottom: 20px;
+        margin: 0 auto;
+    }
+}    
+

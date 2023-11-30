@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Planta.e</title>
+    <meta name="description" content="Loja de plantas e produtos de jardinagem.">
+    <meta name="author" content="Letícia">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        body{ 
+            margin:0
+        }
+
+        main{
+            margin: 10px;
+            margin-right: 0;
+        }
+        #header-customizado {
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+            height: 200px;
+            align-items: center;
+            background-color: #F0FFDA;
+
+        }
+
+        .logo {
+            height: 170px;
+            width: 300px;
+        }
+
+        #imagem1 {
+            width: 30%;
+            padding-left: 15px;
+            margin-left: 15px;
+            float: right;
+           
+        }
+
+        nav a {
+            color: maroon;
+            font-family: 'Gelasio', serif;
+            padding: 20px;
+        }
+
+
+
+        input::placeholder {
+            font-weight: bold;
+            opacity: 0.4;
+            color: black;
+        }
+
+        main>div {
+            color: black
+        }
+
+        li>a {
+            color: brown
+        }
+
+        p>a {
+            color: brown
+        }
+
+        .search-container {
+            width: 200px;
+            display: block;
+            margin: 1 auto;
+        }
+
+        input#search-bar {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            height: 35px;
+            padding: 2px 20px;
+            font-size: 0.8rem;
+            border: 1px solid #D0CFCE;
+            outline: none;
+            bottom: -30px;
+
+            &:focus {
+                border: 1px solid #000000;
+                transition: 0.35s ease;
+                color: #000000;
+
+                &::-webkit-input-placeholder {
+                    transition: opacity 0.45s ease;
+                    opacity: 0;
+                }
+
+                &::-moz-placeholder {
+                    transition: opacity 0.45s ease;
+                    opacity: 0;
+                }
+
+                &:-ms-placeholder {
+                    transition: opacity 0.45s ease;
+                    opacity: 0;
+                }
+            }
+        }
+
+        .search-icon {
+            position: relative;
+            float: right;
+            width: 75px;
+            height: 75px;
+            top: -28px;
+            right: -45px;
+        }
+
+        .intro {
+            color: azure;
+            font-family: 'Gelasio', serif;
+        }
+
+        .mao {
+            position:relative;
+            float: right;
+            height: 210px;
+            width: 140px;
+            right: 310px;
+            bottom: 240px;
+            z-index: 10;
+        }
+
+        section h1,
+        h2,
+        h3,
+        h4 {
+            color: #355925
+        }
+
+        .texto{
+            font-family: 'Gelasio', serif;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header id="header-customizado">
+        <img class="logo" src="https://i.pinimg.com/750x/3d/a5/36/3da536f26cc16f82f0ab0320a21f2673.jpg" alt="">
+        <nav>
+            <a href="pagina3.html">QUEM PLANTAMOS </a>
+            <a href="pagina2.html"> FLORES </a>
+            <a href="pagina4.html"> FRUTÍFERAS </a>
+            <a href="pagina5.html"> VERDINHAS </a>
+            <a href="pagina6.html" class="texto-vermelho"> AJUDA </a>
+        </nav>
+        <nav <form class="search-container">
+            <input type="text" id="search-bar" placeholder="busque sua plantinha...">
+            <a href="#"><img class="search-icon"
+                    src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+            </form>
+        </nav>
+    </header>
+    <main>
+        <div id="conteudo">
+            <section>
+                <aside id="imagem1">
+                    <img src="https://images.unsplash.com/photo-1506634064465-7dab4de896ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+                        alt="" height="560">
+                </aside>
+                <h1>SOBRE O PLANTA.E</h1>
+                <article>
+                    <ul>
+                        <li><a href="pagina3.html"> QUEM PLANTAMOS </a></li>
+                        <li><a href="pagina2.html"> FLORES </a></li>
+                        <li><a href="pagina4.html"> FRUTÍFERAS </a></li>
+                        <li><a href="pagina5.html"> VERDINHAS </a></li>
+                        <li><a href="pagina6.html"> AJUDA </a></li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+
+
+
+
+        <section>
+
+
+            <h2>QUEM PLANTAMOS</h2>
+            <div class="texto">
+                <p>plantae é o reino da natureza que agrupa as plantas, em um vasto conjunto de organismos
+                    multicelulares.</p>
+                <p> são seres que produzem o próprio alimento através da fotossíntese, sendo assim
+                    chamados de autótrofos.</p>
+                <p>o <b>PLANTA.E</b> acredita que nós, assim como as plantas, não precisamos de fontes externas para se suprir: 
+                    <p><b>uma fonte de vida eterna nos foi concedida!</b></p></p>
+                <p>João 15:5,9
+                    <p></p>“Eu sou a videira; vocês são os ramos. Se alguém permanecer em mim e eu nele, esse dará muito fruto; pois sem mim vocês não podem fazer coisa alguma.[...] Como o Pai me amou, assim eu os amei; permaneçam no meu amor."</p>
+            </div>
+            <h3> OS FRUTOS QUE PERMANECEM </h3>
+            <div class="texto">
+                <p>Viver sabendo que tudo que precisamos, <b>ja nos foi dado</b>, gera frutos que permancem: </p>
+                <ul>
+                    <li>Fé;</li>
+                    <li>Esperança;</li>
+                    <li>Amor.</li>
+                </ul>
+
+            </div>
+            <h4>COMO PODEMOS TE AJUDAR</h4>
+            <div class="texto">
+            <p>Na nossa lojinha você vai encontrar produtos para jardinagem e mudas das mais diversas plantas!</p>
+            </div>
+            <img  class= "mao" src="https://images.pexels.com/photos/7235193/pexels-photo-7235193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="">
+            </aside>
+        </section>
+    
+    <footer>
+        <div id="rodape">
+            <p>Copyright (2023) Planta.e Todos os direitos reservados. </p>
+            <address>
+                <p>Email: <a href="pagina7.html">Planta.e@gmail.com </a></p>
+                <p>Telofone: <a href="pagina8.html">+55 31754179 </a></p>
+            </address>
+        </div>
+    </footer>
+</body>
+</main>
+</html>

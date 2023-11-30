@@ -1,0 +1,41 @@
+
+.navbar {
+    height: 80px;
+}
+#counter{
+    position: absolute;
+    background-color: rgb(244, 244, 84);
+    color: black;
+    text-align: center;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    top: -15px;
+    right: -10px;
+}
+
+.added {
+    opacity: 0.3 ;
+}
+
+.rate {
+    color: red;
+}
+
+.card{
+    height: 640px !important;
+}
+
+.card-text{
+    height: 100px;
+    overflow: auto;
+}
+
+.card-title{
+    height: 40px;
+
+}
+#productImage{
+    width: 300px !important ;
+}
