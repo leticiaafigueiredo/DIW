@@ -32,7 +32,7 @@ function get_card_marker(album) {
 
 
 function get_locations(maps) {
-  const url = `${api_url}/albuns` //api
+  const url = `${api_url}/albums` //api
   fetch(url)
     .then((response) => {
       return response.json();
@@ -52,20 +52,20 @@ function get_locations(maps) {
 
 
 
-function getDestaques() {
+/*function getDestaques() {
   const url = `${api_url}/destaques` //api
   fetch(url)
     .then((response) => {
       return response.json();
     })
     .then((array_data) => {
-      renderCarousel(array_data);
+      //renderCarousel(array_data);
       console.log(array_data);
     });
-}
+}*/
 
 function getAlbuns() {
-  const url = `${api_url}/albuns` //api
+  const url = `${api_url}/albums` //api
   fetch(url)
     .then((response) => {
       return response.json();
@@ -76,7 +76,7 @@ function getAlbuns() {
     });
 }
 
-function renderCarousel(destaques) {
+/*function renderCarousel(destaques) {
   const carouselInner = document.getElementById('carousel-inner');
   console.log(destaques[0])
 
@@ -115,7 +115,7 @@ function renderCarousel(destaques) {
           </div>
           <!--FIM DA TERCEIRA IMG-->`;
   return carouselInner;
-}
+}*/
 
 function renderCard(albuns) {
 
@@ -153,5 +153,5 @@ async function renderPage(data) {
 
 const maps = get_map();
 get_locations(maps);
-getDestaques();
+//getDestaques();
 getAlbuns();

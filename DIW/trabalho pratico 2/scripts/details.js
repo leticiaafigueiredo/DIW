@@ -1,45 +1,59 @@
+const urlBase = "https://trabalho-pratico-2-diw.leticiafigueir5.repl.co";
+let idDestaque = null;
+
 async function fetchProductDetails(productId) {
-    try {
-        const response = await fetch(`https://trabalho-pratico-2-diw.leticiafigueir5.repl.co/albuns/${productId}`);
-        const product = await response.json();
-        console.log(productId);
-        return product;
-    } catch (error) {
-        console.error('Erro ao buscar os dados: ', error);
-    }
+  try {
+    const response = await fetch(`https://trabalho-pratico-2-diw.leticiafigueir5.repl.co/albums/${productId}`);
+    const product = await response.json();
+    console.log(productId);
+    return product;
+  } catch (error) {
+    console.error('Erro ao buscar os dados: ', error);
+  }
 }
 
-function getFotos() {
-    const url = `https://trabalho-pratico-2-diw.leticiafigueir5.repl.co/fotos` //api
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((array_data) => {
-        console.log(array_data)
-        renderDetails(array_data);
-      });
+async function fetchFotos(productId) {
+  try {
+    const response = await fetch(`https://trabalho-pratico-2-diw.leticiafigueir5.repl.co/fotos?id-album=${productId}`);
+    const product = await response.json();
+    return product;
+  } catch (error) {
+    console.error('Erro ao buscar os dados: ', error);
   }
-  
 
-//FUNCAO PARA ATUALIZAR O CONETUDO HTMLCPM OS DETALHES DO PRODUTO
+}
+
 
 function updateProductDetails(product) {
-    if (product) {
-        document.getElementById('nameAlbum').textContent = product.name;
-        document.getElementById('imgAlbum').src = product.cover;
-        document.getElementById('descripitionAlbum').textContent = product.description;
-        document.getElementById('latAlbum').textContent = product.location_coordinates[0];
-        document.getElementById('longAlbum').textContent = product.location_coordinates[1];
-        document.getElementById('dateAlbum').textContent = product.date;
+  if (product) {
+    document.getElementById('nameAlbum').textContent = product.name;
+    document.getElementById('imgAlbum').src = product.cover;
+    document.getElementById('descripitionAlbum').textContent = product.description;
+    document.getElementById('latAlbum').textContent = product.location_coordinates[0];
+    document.getElementById('longAlbum').textContent = product.location_coordinates[1];
+    document.getElementById('dateAlbum').textContent = product.date;
 
 
-    } else {
-        alert('Produto nao encontrado');
-    }
+  } else {
+    alert('Produto nao encontrado');
+  }
+console.log(product.destaques.length)
+  if(product.destaques.length>0){
+    setDestaques(product.destaques);
+  }
 }
 
-function renderFotos(fotos){
+async function fetchAlbumDetails(productId){
+  try {
+    const response = await fetch(`${urlBase}/albums/${productId}?_embed=destaques`);
+    const data = await response.json();
+    return data;
+  } catch(error) {
+    console.error('Error ao buscar dados: ', error);
+  }
+}
+
+function renderFotos(fotos) {
   const fotosDiv = document.createElement("div");
   fotosDiv.className = "col-md-4 col-sm-12";
 
@@ -59,7 +73,7 @@ function renderFotos(fotos){
 
 }
 
-function renderModal(fotos){
+function renderModal(fotos) {
   const modalDiv = document.createElement("div");
   modalDiv.className = "carousel-item active";
 
@@ -75,32 +89,102 @@ function renderModal(fotos){
 }
 
 
+
 //funcao para inicializar a pagina e buscar detalhes do produto
-async function renderDetails(data) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    console.log(data[productId-1]);
+async function renderDetails() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get('id');
 
-    const product = await fetchProductDetails(productId);
-    updateProductDetails(product);
+  const product = await fetchProductDetails(productId);
+  
 
-    const fotosSection = document.getElementById('fotosSection');
-    const modalSection = document.getElementById('carousel-inner');
+  const fotosJSON = await fetchFotos(productId);
+  console.log(fotosJSON[0])
+
+  const album = await fetchAlbumDetails(productId);
+  updateProductDetails(album);
+
+  const fotosSection = document.getElementById('fotosSection');
+  const modalSection = document.getElementById('carousel-inner');
 
   //cards de fotos
-    for (let i = 0; i < data[productId-1].length; i++) {
-    const fotos = renderFotos(data[productId-1][i]);
-    fotosSection.appendChild(fotos);
+  for (let i = 0; i < fotosJSON.length; i++) {
+  const fotos = renderFotos(fotosJSON[i]);
+  fotosSection.appendChild(fotos);
   }
 
   //modal de fotos
-  for (let i = 0; i < data[productId-1].length; i++) {
-    const fotos = renderModal(data[productId-1][i]);
-    modalSection.appendChild(fotos);
+  for (let i = 0; i < fotosJSON.length; i++) {
+  const fotos = renderModal(fotosJSON[i]);
+  modalSection.appendChild(fotos);
   }
 
 }
-getFotos();
+
+function setDestaques(destaques){
+  const elem = document.getElementById("destaques");
+  if(destaques && destaques[0]) {
+    elem.checked = true;
+    idDestaque = destaques[0].id;
+    console.log(idDestaque);
+  }
+}
+
+function addDestaques(){
+  const urlParams = new URLSearchParams(window.location.search);
+  const albumId = urlParams.get('id');
+
+  const url = `${urlBase}/destaques`;
+  const data = { albumId: parseInt(albumId) };
+  const request = {
+    method: "POST",
+    headers: { "Content-Type": "application/json"},
+    body: JSON.stringify(data),
+  };
+  fetch(url, request).then((response) => {
+    console.log(response);
+  });
+  return true;
+}
+
+function removeDestaques() {
+  const url = `${urlBase}/destaques/${idDestaque}`;
+  const request = {method: "DELETE"};
+  fetch(url, request).then((response) => {
+    console.log(response);
+  });
+  return true;
+}
+
+function udpdateDestaques(elem){
+  let resp = false;
+  if(elem.checked) {
+    resp = add_destaque();
+  } else if(idDestaque) {
+    resp = remove_destaque();
+  }
+  if(!resp) elem.checked = !elem.checked;
+}
+
+function initiateCheckbox(){
+  //obter elemento do checkbox pelo id
+  const checkbox = document.getElementById('destaques');
+
+  //eventlistener no evento change
+  checkbox.addEventListener('change', function (event){
+    if(event.target.checked) {
+      addDestaques()
+      console.log('checkbox esta marcado!');
+    } else {
+      removeDestaques()
+      console.log('checkbox nao esta marcado!');
+    }
+  });
+}
+
+renderDetails();
+initiateCheckbox();
+
 
 
 
