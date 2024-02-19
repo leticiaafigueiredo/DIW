@@ -1,2 +1,2 @@
-# DIW-Desenvolvimento de Interfaces Web
-Trabalhos práticos referentes a disciplina de DIW, durante o primeiro período.
+# DIW
+Trabalhos práticos referentes a disciplina de Desenvolvimento de Interfaces Web, durante o primeiro período.
